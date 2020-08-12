@@ -46,3 +46,25 @@ services:
     environment:
       - DISPLAY=$DISPLAY
     runtime: nvidia
+  kfranke_nndichromacy:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - ../../../var/sinz-shared:/data
+      - ../projects:/notebooks
+    env_file: .env_franke
+    environment:
+      - DISPLAY=$DISPLAY
+    runtime: nvidia
+  gpu-server_prod:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - /var/lib/nova/sinz-shared:/data
+      - ../projects:/notebooks
+    env_file: .env
+    environment:
+      - DISPLAY=$DISPLAY
+    runtime: nvidia
