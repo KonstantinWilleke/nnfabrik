@@ -20,6 +20,19 @@ services:
       - "8888:8888"
     volumes:
       - /var/lib/nova/sinz-shared:/data
+      - /var/lib/nova/sinz-shared:/notebooks/server_data
+      - ../projects:/notebooks
+    env_file: .env
+    environment:
+      - DISPLAY=$DISPLAY
+    runtime: nvidia
+  gpu-server_production:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - /var/lib/nova/sinz-shared:/data
+      - /var/lib/nova/sinz-shared:/notebooks/server_data
       - ../projects:/notebooks
     env_file: .env
     environment:
@@ -31,6 +44,7 @@ services:
       - "8888:8888"
     volumes:
       - ../../../var/sinz-shared:/data
+      - ../../../var/sinz-shared:/notebooks/static
       - ../projects:/notebooks
     env_file: .env
     environment:
@@ -52,6 +66,7 @@ services:
       - "8888:8888"
     volumes:
       - ../../../var/sinz-shared:/data
+      - ../../../var/sinz-shared:/notebooks/static
       - ../projects:/notebooks
     env_file: .env_franke
     environment:
