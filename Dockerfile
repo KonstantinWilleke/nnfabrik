@@ -11,6 +11,7 @@ RUN pip3 install -e /src/nnfabrik/nndichromacy/nndichromacy
 RUN pip3 install -e /src/nnfabrik/mei/mei
 RUN pip3 install -e /src/nnfabrik/insilico_stimuli/insilico-stimuli
 RUN pip3 install -e /src/nnfabrik/fitgabor
+RUN pip3 install -e /src/nnfabrik/nnidentify
 RUN pip3 install git+https://github.com/sacadena/ptrnets
 RUN pip3 install git+https://github.com/dicarlolab/CORnet
 RUN pip3 install --upgrade --force-reinstall torch==1.7.0 torchvision==0.8.1 -f https://download.pytorch.org/whl/cu102/torch_stable.html
